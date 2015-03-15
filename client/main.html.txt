@@ -1,0 +1,46 @@
+<head>
+    <meta name="google-site-verification" content="CS9jfuv3Gs6UMWqramkwEx6ew5eC5D8X-foOwBn5Xws" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Apple devices fullscreen -->
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="fragment" content="!">
+    <title>死记硬背 | Cram Up</title>
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Apple devices Homescreen icon -->
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png">
+
+
+    <script type="text/javascript" id="inspectletjs">
+        window.__insp = window.__insp || [];
+        __insp.push(['wid', 1215831503]);
+        (function() {
+            function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+            if (window.attachEvent){
+                window.attachEvent('onload', __ldinsp);
+            }else{
+                window.addEventListener('load', __ldinsp, false);
+            }
+        })();
+    </script>
+
+
+    <script>
+        (function(){
+            var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+        })("woopra");
+
+        woopra.config({
+            domain: 'thebrain.pro'
+        });
+    </script>
+
+</head>
+
+<body>
+</body>

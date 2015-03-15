@@ -1,0 +1,50 @@
+<template name="availableFlashcard">
+    <div class="flashcardsList">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="center">
+                    <div class="myFlashcardRow row {{isFlashcardSelected}}" data-id="{{_id}}" >
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="pull-left"><span class="badge badge-upVote clickable badge-success"><i class="fa fa-thumbs-o-up"></i> {{upVotes.length}}</span>
+                                    &nbsp;
+                                    <span class="badge badge-downVote clickable badge-warning"><i class="fa fa-thumbs-o-down"></i> {{downVotes.length}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                Author: {{userName}}<br/>
+                               <div style="display: none">{{reloadFlashcard}}</div>
+                            </div>
+                            <div class="row myFlashcardButtons">
+                                <button class=" btn btn-primary btn-primary-main btn-addToCollectionFlashcard btn-block">Add To Collection
+                                </button>
+                                <button class=" btn btn-primary btn-primary-main btn-commentsFlashcard btn-block">Comments ( {{comments.length}} )
+                                </button>
+                                <button class=" btn btn-primary btn-primary-main btn-editFlashcard btn-block">Edit
+                                </button>
+                                <button class=" btn btn-primary btn-primary-main btn-flashcardDetails btn-block" data-id="{{_id}}">More info
+                                </button>
+                                <button class=" btn btn-primary btn-primary-main btn-selectFlashcard btn-block" data-id="{{_id}}">{{isFlashcardSelectedButton}}
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="col-md-8 selectableFlashcard">
+                            <div class="center">
+                                <div class="flashcard front">{{{flashcardFront}}}</div>
+                                <div class="flashcard back">{{{flashcardBack}}}</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,81 @@
+<template name="topMenu">
+    <ul class="main-nav hidden-xs hidden-sm">
+        <li class="topNav dropdown">
+            <a href="/">
+                <span>{{#if isLoggedIn}}Home{{else}}Sign up!{{/if}}</span>
+            </a>
+        </li>
+        {{#if isLoggedIn}}
+        <li id="studyLink" class="topNav dropdown">
+            <a href="/study">
+                <span>Study!</span>
+            </a>
+        </li>
+        {{/if}}
+        <li class="topNav dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <span>Flashcards</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+                {{#if isLoggedIn}}
+                <li>
+                    <a href="/newFlashcard">
+                        <span>Add Flashcards</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/myFlashcards">
+                        <span>My Flashcards</span>
+                    </a>
+                </li>
+                {{/if}}
+                <li>
+                    <a href="/availableFlashcards">
+                        <span>Look for Flashcards</span>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+
+        <li class="topNav dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <span>Courses</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-custom ">
+                {{#if isLoggedIn}}
+                <li>
+                    <a href="/myCourses">
+                        ... I'm teaching
+                    </a>
+                </li>
+                <li>
+                    <a href="/enrolledCourses">
+                        ... I'm taking
+                    </a>
+                </li>
+                {{/if}}
+                <li>
+                    <a href="/availableCourses">
+                        Available Courses
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{#if isLoggedIn}}
+        <li class="topNav dropdown">
+            <a href="/myCollections">
+                <span>My collections</span>
+            </a>
+        </li>
+        {{/if}}
+        <li class="topNav">
+            <a href="/khanPlaylists">
+                <span>KhanAcademy Playlists</span>
+            </a>
+        </li>
+
+    </ul>
+</template>

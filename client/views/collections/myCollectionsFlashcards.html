@@ -1,0 +1,124 @@
+<template name="myCollectionsFlashcards">
+    <div class="row">
+        <div class="col-md-9 center">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="fa fa-th-list"></i> {{collectionName}}</h3>
+                </div>
+                <div class="box-content padding">
+                    <div class="row examModeButton">
+                        <div class="col-md-12">
+                            <button class=" btn btn-primary btn-primary-main btn-examModeModal btn-block"><i class="fa fa-hand-o-right"></i> Exam mode / schedule extra repetitions
+                            </button>
+                        </div>
+                    </div>
+                    {{> withSelectedItems }}
+
+                        <div id="flashcardsList">
+                            {{#each item}}
+                                {{> myFlashcard }}
+                            {{/each}}
+                        </div>
+
+
+                        {{#if itemsReady}}
+
+                                {{#unless allItemsLoaded}}
+                                    <div class="textCenter">
+                                        <button class="btn btn-primary btn-primary-main load-more"><i class="fa fa-hand-o-down"> Load more</i></button>
+                                    </div>
+                                {{/unless}}
+
+                        {{else}}
+
+                                <div>{{> spinner}}</div>
+
+                        {{/if}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="withSelectedItems">
+    <div class="withSelected">
+        <div class="row searchPanel">
+            <div class="col-md-8 center">
+                <form action="" method="GET" class="search-form">
+                    <div class="search-pane">
+                        <input type="text" name="search" id="availableItemsSearch"  placeholder="Search here...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row ">
+            <span class="label label-info withSelectedLabel">With {{flashcardsSelectedLength}} selected:</span>
+
+        </div>
+        <div class="withSelectedButtons">
+            <div class="row">
+                {{#unless deactivatedCollection}}
+                {{#if isCollectionSelected}}<div class="col-md-3" >
+                    <button class=" btn btn-primary btn-primary-main btn-changeCollection btn-block"><i class="fa fa-hand-o-right"></i> Change collection
+                    </button>
+                </div>{{/if}}
+                <div class="{{isShortSpan}}">
+                    <button class=" btn btn-primary btn-primary-main btn-deactivateItems btn-block"><i class="fa fa-hand-o-right"></i> Deactivate
+                    </button>
+                </div>
+                <div class="{{isShortSpan}}">
+                    <button class=" btn btn-primary btn-primary-main btn-extraRepeatItems btn-block"><i class="fa fa-hand-o-right"></i> Extra repeat session
+                    </button>
+                </div>
+                <div class="{{isShortSpan}}">
+                    <button class=" btn btn-primary btn-primary-main btn-addItemsToCourse btn-block"><i class="fa fa-hand-o-right"></i> Add to course
+                    </button>
+                </div>
+                {{else}}
+                    <div class="col-md-12">
+                        <button class=" btn btn-primary btn-primary-main btn-activateItems btn-block"><i class="fa fa-hand-o-right"></i> Reactivate
+                        </button>
+                    </div>
+                {{/unless}}
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class=" btn btn-primary btn-primary-main btn-selectAll btn-block"><i class="fa fa-hand-o-right"></i> Select All
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary btn-primary-main btn-deSelectAll btn-block"><i class="fa fa-hand-o-right"></i> Deselect All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="changeItemsCollectionModal">
+                <form action="#" class='form-horizontal form-bordered'>
+                    {{> collectionSelector }}
+                </form>
+</template>
+
+<template name="collectionSelector">
+
+    <div class="form-group">
+        <label class="control-label col-sm-4">Collection</label>
+
+        <div class="col-sm-8">
+            <span class="formSpanReplacement"></span>
+            <select name="newCollectionId" id="newCollectionId" class="select2 width100">
+                {{#each collection}}
+                    <option value="{{_id}}" {{selectIfCurrent}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+
+</template>

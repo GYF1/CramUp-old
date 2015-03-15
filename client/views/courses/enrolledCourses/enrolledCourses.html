@@ -1,0 +1,36 @@
+<template name="enrolledCourses">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="fa fa-th-list"></i> Courses I'm taking</h3>
+                </div>
+                <div class="box-content nopadding">
+                    <table class="table table-hover table-nomargin">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Students</th>
+                            <th class="hidden-480">Flashcards</th>
+                            <th class="hidden-480">Lessons</th>
+                            <th class="hidden-480">Votes</th>
+                            <th class="hidden-480">Comments</th>
+                            <th>Enter</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#if amINotEnrolledInAnyCourses}}
+                            <tr><th style="text-align: center;" colspan="7">You are not taking any courses yet! Go to <a href="/availableCourses">available courses</a> to enroll in one!</th></tr>
+                        {{else}}
+                                {{#each course}}
+                            {{> courseRow }}
+                            {{/each}}
+                        {{/if}}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,66 @@
+<template name="khanPlaylists">
+    <div class="row">
+        <div class="col-md-6 center">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="fa fa-th-list"></i> KhanAcademy Playlists</h3>
+                </div>
+                <div class="box-content padding">
+                    <div class="row searchPanel">
+                        <div class="col-md-8 center">
+                            <form action="" method="GET" class="search-form">
+                                <div class="search-pane">
+                                    <input type="text" name="search" id="khanPlaylistsSearch" placeholder="Search here...">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                        {{#each khanPlaylist}}
+                            {{> khanPlaylistRow }}
+                        {{/each}}
+
+
+                        {{#if khanPlaylistsReady}}
+
+                                {{#unless allKhanPlaylistsLoaded}}
+                                    <div class="textCenter">
+                                        <button class="btn btn-primary btn-primary-main load-more"><i class="fa fa-hand-o-down"> Load more</i></button>
+                                    </div>
+                                {{/unless}}
+
+                        {{else}}
+
+                                <div>{{> spinner}}</div>
+
+                        {{/if}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="khanPlaylistRow">
+       <div class="khanPlaylistRow" data-id="{{slug}}">
+           <h5 class="khanTitle" data-id="{{slug}}">{{title}}</h5>
+       <div class="khanDescription" data-id="{{slug}}">{{description}}</div>
+           <div class="khanVideos" data-id="{{slug}}">
+               <h6>Videos in playlist:</h6>
+               <ul class="khanVideosListing" data-id="{{slug}}">
+       {{#each videos}}
+           {{> khanVideoRow}}
+       {{/each}}
+               </ul>
+           </div>
+       </div>
+</template>
+
+<template name="khanVideoRow">
+    {{#if currentKhanVideo}}
+    <li class="khanVideo" data-id="{{readable_id}}"><i class="fa fa-hand-o-right pull-left"></i><b style="color: black">{{title}} </b></li>
+    {{else}}
+    <li class="khanVideo" data-id="{{readable_id}}"><i class="fa fa-hand-o-right pull-left"></i><span class="khanTitle">{{title}} </span></li>
+    {{/if}}
+</template>

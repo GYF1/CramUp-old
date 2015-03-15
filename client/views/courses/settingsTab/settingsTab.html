@@ -1,0 +1,27 @@
+<template name="courseSettingsTab">
+
+        <div class="tab-pane fade" id="courseSettings">
+             {{> courseSettings }}
+        </div>
+    </template>
+
+<template name="courseSettings">
+    <div style="text-align: center;">
+
+    {{#with course}}
+        <p>
+    Course name: <a href="javascript:" name="name" data-id="{{_id}}" data-type="text" class="course-name editable">{{name}}</a>
+        </p>
+
+        <p>
+        <button class="btn btn-primary btn-primary-main btn-courseSwitchPublic {{switchPublicBtnAction}}" data-id="{{_id}}"><i
+                class="fa fa-hand-o-right"> {{switchPublicBtnText}}!</i>
+        </button>
+
+        </p>
+
+    {{/with}}
+
+    </div>
+
+</template>

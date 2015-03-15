@@ -1,0 +1,147 @@
+<template name="login">
+
+    <div class="row">
+
+
+        <div class="col-md-6 loginWelcome">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="fa fa-th-list"></i> Welcome to TheBrain!</h3>
+                </div>
+
+                <div class="box-content padding" style="text-align: center;">
+
+
+                    <div class="visible-xs visible-sm loginListPhone">
+                        <p><strong>Remember for life</strong>, not for exams</p>
+
+                        <p>Learn smart and <strong>save your time</strong></p>
+
+                        <p><strong>Amaze</strong> everyone with <strong>robot-like memory</strong></p>
+
+                        <p>Be a <strong>creator</strong>. TheBrain <strong>learns with you.</strong></p>
+
+                        <p><strong>Make TheBrain Happy! :)</strong></p>
+                    </div>
+
+                    <ul class="fa-ul loginList visible-md visible-lg">
+                        <li><i class="fa fa-li fa-check"></i><strong>Remember for life</strong>, not for exams</li>
+                        <li><i class="fa fa-li fa-check"></i>Learn smart and <strong>save your time</strong></li>
+                        <li><i class="fa fa-li fa-check"></i><strong>Amaze</strong> everyone with <strong>robot-like memory</strong></li>
+                        <li><i class="fa fa-li fa-check"></i>Be a <strong>creator</strong>. TheBrain <strong>learns with you.</strong></li>
+                        <li><i class="fa fa-li fa-check"></i><strong>Make TheBrain Happy! :)</strong></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 loginSignUp">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="fa fa-th-list"></i> Join TheBrain!</h3>
+                </div>
+                <div class="box-content padding" style="text-align: center;">
+
+
+                    <p class="lead">Are you already familiar with spaced repetition? </p>
+
+
+                    <button type="submit" class="btn-mine quickButton btn-signUpWithFacebook"><i class="fa fa-hand-o-right"></i> Join
+                        <strong>TheBrain</strong>
+                        with <i class="fa fa-facebook-square" style="margin-right: 2px;"></i>acebook!
+                    </button>
+
+                    <p class="login-or">OR</p>
+
+
+                    <div class="submit">
+                        <button type="submit" class="btn-mine quickButton btn-signUpWithEmailModal">
+                            <i class="fa fa-hand-o-right"></i>
+                            Join with
+                            Email
+                        </button>
+                    </div>
+                    <h2 class="text-center">For Free. For Ever.</h2>
+
+                    <p class="lead" style="margin-top: 10px; margin-bottom: 10px;">Not familiar? Enjoy the <strong>introductory
+                        video</strong> first. </p>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 loginSignUp">
+            <div class="box box-bordered box-color">
+                <div class="box-title">
+                    <h3><i class="fa fa-th-list"></i> Introductory video</h3>
+                </div>
+                <div class="box-content padding" style="text-align: center;">
+
+
+                    <div class="flex-video widescreen">
+                        <iframe src="http://www.youtube.com/embed/ZqZTIIZcg5o?HD=1;rel=0;showinfo=0;controls=0"
+                                frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+
+                    Learn more here: <a href="http://blog.thebrain.pro/2014/04/what-is-thebrain-pro-all-about/" target="_blank">What is TheBrain.Pro all
+                    about?</a><br/>
+                    And don't forget to check the mobile app on <a href="https://itunes.apple.com/us/app/thebrain.pro/id826908600?mt=8">AppStore</a>!<br/>
+                    Join the community on <a href="http://facebook.com/TheBrainPortal/">facebook</a><br/>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</template>
+
+
+<template name="workInProgressReactiveModal">
+    <div class="modalInfo">
+        <h3 class="repeat">Thanks for your interest in TheBrain!</h3>
+
+        <p class="lead repeat">You are currently not logged in to the site, so your options are limited.</p>
+
+        <p class="lead repeat last">Please feel free to look around, and if you like what you see - sign up!</p>
+    </div>
+</template>
+
+
+<template name="signUpWithEmailForm">
+    <form class="form-validate form-horizontal form-bordered" id="signUp">
+        <div class="form-group">
+            <label class="control-label hidden-xs col-sm-4">Email (TheBrain login)</label>
+
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input class="signUp newEmail form-control" type="email" required
+                            placeholder="Email address">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label hidden-xs col-sm-4">TheBrain Password</label>
+
+            <div class="col-sm-8">
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                    <input class="signUp newPassword form-control" type="password" required
+                            placeholder="Password">
+                </div>
+            </div>
+        </div>
+
+        <input type="submit" style="visibility: hidden;"/>
+    </form>
+</template>
+

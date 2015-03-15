@@ -1,0 +1,45 @@
+<template name="youtubeFlashcardsTab">
+    <div class="tab-pane fade lessonFlashcards" id="youtubeFlashcards">
+         {{> youtubeFlashcardsOptions}}
+        {{> youtubeFlashcardsList }}
+    </div>
+</template>
+
+
+<template name="youtubeFlashcardsList">
+
+
+        {{#each flashcard}}
+            {{> flashcardRow}}
+        {{/each}}
+
+
+    <div style="text-align: center">
+            {{#if flashcardsReady}}
+                {{#unless allFlashcardsLoaded}}
+                    <button class="btn btn-primary btn-primary-main btn-loadMore"><i class="icon-hand-up"> Load more</i></button>
+
+                {{/unless}}
+            {{else}}
+                <div style="margin-bottom: 10px;">{{> spinner}}</div>
+            {{/if}}
+    </div>
+</template>
+
+<template name="youtubeFlashcardsOptions">
+    <div class="flashcardsOptions col-md-12">
+        <div class="withSelectedButtons">
+            <div class="row">
+                <div class="col-md-12">
+                    <button class=" btn btn-primary btn-primary-main btn-addFlashcardToYoutube btn-block "><i class="fa fa-edit"></i> Add Flashcard
+                    </button>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+
+                {{> flashcardsDefaultOptions }}
+            </div>
+        </div>
+    </div>
+</template>
