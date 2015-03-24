@@ -1,3 +1,8 @@
+/**
+ * Meteor客户端可以调用的远程函数
+ * 在客户端可以通过Meteor.call来调用
+ *
+ */
 Meteor.methods({
     newCollection: function (collectionAttributes) {
         var user = Meteor.user();
@@ -15,7 +20,7 @@ Meteor.methods({
         //Meteor.theBrain.addConnections(10);
         return collection._id;
     },
-    
+
     updateCollectionName: function (collectionAttributes) {
         var user = Meteor.user();
         if (!user)
@@ -23,14 +28,14 @@ Meteor.methods({
         if (!collectionAttributes.name) {
             throw new Meteor.Error(422, "Please fill the name of your collection");
         }
-                
+
         var _collectionId = {_id: user._id, "collections._id": collectionAttributes.collectionId};
-        
+
         var _collectionIndex = _.indexOf(_.pluck(Meteor.user().collections, '_id'), collectionAttributes.collectionId);
 
         var modifier = {$set: {}};
         modifier.$set["collections." + _collectionIndex + ".name"] = collectionAttributes.name;
 
         Meteor.users.update(_collectionId, modifier);
-    }  
+    }
 })

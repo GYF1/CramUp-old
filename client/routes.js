@@ -1,3 +1,7 @@
+/**
+ * use a default layout template for all routes
+ * 给所有的路由设置一个默认的布局模版
+ */
 Router.configure({
   //layoutTemplate: 'TheBrainBody'
   layoutTemplate: 'CramUpBody'

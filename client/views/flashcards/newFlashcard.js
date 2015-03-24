@@ -114,7 +114,7 @@ Template.flashcardButtons.events({
             "easeInOutCubic",
             function () {
                 $(".btn-showAdvanced").attr("disabled", false)
-                    .html("Hide advanced settings")
+                    .html("隐藏高级设置")
                     .removeClass("btn-showAdvanced")
                     .addClass("btn-hideAdvanced");
                 $(".btn-hideAdvanced").switchClass("btn-primary-reversed", "btn-primary-main", 400);
@@ -127,7 +127,7 @@ Template.flashcardButtons.events({
             "easeInOutCubic",
             function () {
                 $(".btn-hideAdvanced").attr("disabled", false)
-                    .html("Show advanced settings")
+                    .html("显示高级设置")
                     .removeClass("btn-hideAdvanced")
                     .addClass("btn-showAdvanced");
                 $(".btn-showAdvanced").switchClass("btn-primary-reversed", "btn-primary-main", 400);

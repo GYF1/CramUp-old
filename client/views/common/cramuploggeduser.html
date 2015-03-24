@@ -1,0 +1,18 @@
+<template name="cramuploggeduser">
+  <ul class="list-inline right-topbar pull-right">
+    <li>
+      <!--<a href="javascript:void(0);">-->
+        <!--{{user.identity.nick}}-->
+        <!--<i class="fa fa-user"></i>-->
+      <!--</a>-->
+      {{user.identity.nick}}，欢迎您&nbsp;&nbsp;|
+    </li>
+    <li><a href="/myProfile">个人设置&nbsp;&nbsp;</a></li>
+    <li><a href="/calendar">学习日历&nbsp;&nbsp;</a></li>
+    <li><a href="/messageCenter">消息中心&nbsp;&nbsp;</a></li>
+    <li><a id="logOut" href="javascript:">退出&nbsp;&nbsp;|</a></li>
+    <li><a href="shop-ui-add-to-cart.html">心愿单 (0)&nbsp;&nbsp;|</a></li>
+    <li><a href="#">帮助中心</a></li>
+    <li><i class="search fa fa-search search-button"></i></li>
+  </ul>
+</template>

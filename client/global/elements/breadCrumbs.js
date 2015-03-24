@@ -1,128 +1,138 @@
-Template.breadCrumbs.link = function () {
+Template.breadCrumbs.helpers({
+  link : function () {
     var _newPage = Session.get("isNewPage");
     var _breadCrumbs = [];
 
 
     var _currentRoute = window.location.pathname;
     if (_currentRoute === "/home") {
-        return [];
+      return [];
     }
 
     console.log("getting to the breadCrumbs");
 
     _currentRoute = "/" + _currentRoute.split("/")[1];
     switch (_currentRoute) {
-        case '/lesson':
-            _breadCrumbs.push(_returnCoursePathBread());
-            _breadCrumbs.push(_returnCourseBread());
-            _breadCrumbs.push(_returnLessonBread());
-            break;
-        case '/course':
-            _breadCrumbs.push(_returnCoursePathBread());
-            _breadCrumbs.push(_returnCourseBread());
-            break;
-        case '/newFlashcard':
-            _breadCrumbs.push({
-                name: "New Flashcard",
-                path: _currentRoute
-            });
-            break;
-        case '/myFlashcards':
-            _breadCrumbs.push({
-                name: "My Flashcards",
-                path: _currentRoute
-            });
-            break;
-        case '/availableFlashcards':
-            _breadCrumbs.push({
-                name: "Look For Flashcards",
-                path: _currentRoute
-            });
-            break;
-        case '/repeat':
-            _breadCrumbs.push({
-                name: "Repeat",
-                path: _currentRoute
-            });
-            break;
-        case '/study':
-            _breadCrumbs.push({
-                name: "Study!",
-                path: _currentRoute
-            });
-            break;
-        case '/myCourses':
-            _breadCrumbs.push({
-                name: "Courses I'm teaching",
-                path: _currentRoute
-            });
-            break;
-        case '/enrolledCourses':
-            _breadCrumbs.push({
-                name: "Courses I'm taking",
-                path: _currentRoute
-            });
-            break;
-        case '/availableCourses':
-            _breadCrumbs.push({
-                name: "Available Courses",
-                path: _currentRoute
-            });
-            break;
-        case '/myCollections':
-            _breadCrumbs.push(_returnMyCollectionsBread());
-            break;
-        case '/myCollection':
-            _breadCrumbs.push(_returnMyCollectionsBread());
-            _breadCrumbs.push(_returnMyCollectionBread());
-            break;
-        case '/myProfile':
-            _breadCrumbs.push({
-                name: "My Profile",
-                path: _currentRoute
-            });
-            break;
-        case '/calendar':
-            _breadCrumbs.push({
-                name: "Repetitions Calendar",
-                path: _currentRoute
-            });
-            break;
-        case '/myAchievements':
-            _breadCrumbs.push({
-                name: "My Achievements",
-                path: _currentRoute
-            });
-            break;
-        case '/notificationCenter':
-            _breadCrumbs.push({
-                name: "Notification Center",
-                path: _currentRoute
-            });
-            break;
-        case '/khanPlaylists':
-            _breadCrumbs.push(_returnKhanAcademyPlaylistsPathBread());
-            break;
-        case '/khanVideo':
-            _breadCrumbs.push(_returnKhanAcademyPlaylistsPathBread());
+      case '/lesson':
+        _breadCrumbs.push(_returnCoursePathBread());
+        _breadCrumbs.push(_returnCourseBread());
+        _breadCrumbs.push(_returnLessonBread());
+        break;
+      case '/course':
+        _breadCrumbs.push(_returnCoursePathBread());
+        _breadCrumbs.push(_returnCourseBread());
+        break;
+      case '/newFlashcard':
+        _breadCrumbs.push({
+          name: "New Flashcard",
+          path: _currentRoute
+        });
+        break;
+      case '/myFlashcards':
+        _breadCrumbs.push({
+          name: "My Flashcards",
+          path: _currentRoute
+        });
+        break;
+      case '/availableFlashcards':
+        _breadCrumbs.push({
+          name: "Look For Flashcards",
+          path: _currentRoute
+        });
+        break;
+      case '/repeat':
+        _breadCrumbs.push({
+          name: "Repeat",
+          path: _currentRoute
+        });
+        break;
+      case '/study':
+        _breadCrumbs.push({
+          name: "Study!",
+          path: _currentRoute
+        });
+        break;
+      case '/myCourses':
+        _breadCrumbs.push({
+          name: '我教的课程',
+          path: _currentRoute
+        });
+        break;
+      case '/enrolledCourses':
+        _breadCrumbs.push({
+          name: "Courses I'm taking",
+          path: _currentRoute
+        });
+        break;
+      case '/availableCourses':
+        _breadCrumbs.push({
+          name: "Available Courses",
+          path: _currentRoute
+        });
+        break;
+      case '/myCollections':
+        _breadCrumbs.push(_returnMyCollectionsBread());
+        break;
+      case '/myCollection':
+        _breadCrumbs.push(_returnMyCollectionsBread());
+        _breadCrumbs.push(_returnMyCollectionBread());
+        break;
+      case '/myProfile':
+        _breadCrumbs.push({
+          name: "个人设置",
+          path: _currentRoute
+        });
+        break;
+      case '/calendar':
+        _breadCrumbs.push({
+          name: "Repetitions Calendar",
+          path: _currentRoute
+        });
+        break;
+      case '/myAchievements':
+        _breadCrumbs.push({
+          name: "My Achievements",
+          path: _currentRoute
+        });
+        break;
+      case '/notificationCenter':
+        _breadCrumbs.push({
+          name: "Notification Center",
+          path: _currentRoute
+        });
+        break;
+      case '/khanPlaylists':
+        _breadCrumbs.push(_returnKhanAcademyPlaylistsPathBread());
+        break;
+      case '/khanVideo':
+        _breadCrumbs.push(_returnKhanAcademyPlaylistsPathBread());
 //            _breadCrumbs.push({
 //                name: ""
 //            })
-            break;
-        case '/messageCenter':
-            _breadCrumbs.push(_returnMessageCenterPathBread())
-            break;
-        case '/conversation':
-            _breadCrumbs.push(_returnMessageCenterPathBread())
-            _breadCrumbs.push(_returnConversationPathBread())
-            break;
+        break;
+      case '/messageCenter':
+        _breadCrumbs.push(_returnMessageCenterPathBread())
+        break;
+      case '/conversation':
+        _breadCrumbs.push(_returnMessageCenterPathBread())
+        _breadCrumbs.push(_returnConversationPathBread())
+        break;
 
 
     }
-    console.log("_breadCrumbs", _breadCrumbs);
-    return _breadCrumbs;
 
-}
+    console.log("_breadCrumbs", _breadCrumbs);
+    //return _breadCrumbs;
+
+    var objBreadCrumbs = {
+      links: _breadCrumbs,
+      pageTitle: _breadCrumbs[_breadCrumbs.length - 1].name
+    }
+    return objBreadCrumbs;
+
+  }
+});
+
 
 var _returnMessageCenterPathBread = function() {
     var _breadCrumb = {

@@ -1,25 +1,41 @@
 <template name="breadCrumbs">
-    <div class="breadcrumbs">
-        <ul>
-            <li>
-                <span><strong style="display: block;
-padding: 2px 6px;
-font-size: 12px;
-float: left;">You Are Here</strong></span>
+  <!--
+  <div class="breadcrumbs">
+    <ul>
+      <li>
+        <span><strong style="display: block;padding: 2px 6px;font-size: 12px;float: left;">You Are Here</strong></span>
+      </li>
+      <li>
+        <i class="fa fa-angle-right"></i>
+        <a href="/">Home</a>
+      </li>
+      {{#each link}}
+        <li>
+          <i class="fa fa-angle-right"></i>
+          <a href="{{path}}">{{name}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  -->
 
+  <!--=== Breadcrumbs ===-->
+  <div class="breadcrumbs">
+    <div class="container">
+      <h1 class="pull-left">{{link.pageTitle}}</h1>
+      <ul class="pull-right breadcrumb">
+        <li><a href="index.html">首页</a></li>
+        <!--<li><a href="">Features</a></li>-->
+        <!--<li class="active">Common Bootstrap Forms</li>-->
+        {{#each link.links}}
+          <li>
+            <a href="{{path}}">{{name}}</a>
+          </li>
+        {{/each}}
 
-            </li>
-            <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="/">Home</a>
-            </li>
-            {{#each link}}
-                <li>
-                    <i class="fa fa-angle-right"></i>
-                    <a href="{{path}}">{{name}}</a>
-                </li>
-            {{/each}}
-
-        </ul>
+      </ul>
     </div>
+  </div>
+  <!--/breadcrumbs-->
+  <!--=== End Breadcrumbs ===-->
 </template>
